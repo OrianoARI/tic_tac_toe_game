@@ -30,16 +30,25 @@
             </div>
         </div>
         <div id="score">
-            <h2>Tableau de bord</h2>
-            <div id="activePlayer">
-                <p>Légionnaire Impérial</p>
-                <p>Guerrier Sombrage</p>
+            <div>
+                <h2>Tableau de bord</h2>
+                <div id="gameSelect">
+                    <button id="solo" class="button" onclick="onePlayer()">Solo</button>
+                    <button id="multi" class="button" onclick="multiPlayer()">Multijoueur</button>
+                </div>
+                <div id="activePlayer">
+                    <p id="imp">Légionnaire Impérial</p>
+                    <p id="somb">Guerrier Sombrage</p>
+                </div>
+                <div class="win">
+                    <p id="impWin">Le Légionnaire Impérial <br> gagne!</p>
+                    <p id="sombWin">Le Guerrier Sombrage <br> gagne!</p>
+                    <p id="draw">Egalité!</p>
+                </div>
             </div>
-            <div class="win">
-                <p id="impWin">Le Légionnaire Impérial gagne!</p>
-                <p id="sombWin">Le Guerrier Sombrage gagne!</p>
+            <div>
+                <button id="reset" class="button" onclick="reset()">Rejouer</button>
             </div>
-            <button onclick="reset()">Rejouer</button>
         </div>
     </div>
     <script src="assets/js/main.js"></script>

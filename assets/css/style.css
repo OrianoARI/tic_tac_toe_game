@@ -1,20 +1,140 @@
-h1{
+@font-face {
+    font-family: viking;
+    src: url(../fonts/Viking.otf);
+}
+
+@font-face {
+    font-family: old;
+    src: url(../fonts/old.ttf);
+}
+
+@font-face {
+    font-family: nordic;
+    src: url(../fonts/Faithcollapsing.ttf);
+}
+
+
+body {
+    background-image: url(../img/main_background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    font-family: nordic;
+    color: rgba(115, 150, 134, 0.783);
+    text-shadow: 10px 10px 10px rgba(65, 92, 81, 0.525);
+    font-size: 80px;
     text-align: center;
     margin: 40px;
 }
+
+#game{
+    display: flex;
+    padding-top: 100px;
+}
+
+#grid {
+    margin-left: 100px;
+    width: 432px;
+    height: 432px;
+    background-image: url(../img/grid-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.71);
+    align-items: center;
+}
+
+#score{
+    display: flex;
+    flex-direction: column;
+    margin-left: 400px;
+    padding: 20px 50px 20px 50px;
+    background-image: url(../img/background_board.jpg);
+    text-align: center;
+    font-family: nordic;
+    font-size: 30px;
+    color: beige;
+    border-radius: 10px;
+}
+
+h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: rgb(198, 157, 103);
+    text-shadow: 5px 5px 5px black;
+}
+
+#activePlayer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#activePlayer p{
+    margin: 10px;
+}
+
+
 
 .row {
     display: flex;
     justify-content: center;
 }
 
-.cellOne, .cellTwo, .cellThree{
-border: 2px solid black;
-padding: 20px;
-height: 100px;
-width: 100px;
-margin: 0;
-text-align: center;
-font-size: 50px;
+.cellOne,
+.cellTwo,
+.cellThree {
+    border: 2px solid black;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    text-align: center;
+    font-size: 150px;
+    font-family: old;
+    line-height: 80px;
+    color:  rgb(60, 118, 92);
 }
 
+.win{
+    height: 200px;
+    position: relative;
+
+}
+
+
+.button{
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: nordic;
+    color: beige;
+    font-size: 30px;
+    border: 5px ridge rgba(122, 79, 0, 0.616);
+    background-color: rgb(112, 63, 0);
+}
+
+#impWin{
+    position: absolute;
+    margin-top: 30px;
+    font-size: 50px;
+    left: 20px;
+    display: none;
+}
+
+#sombWin{
+    position: absolute;
+    margin-top: 30px;
+    font-size: 50px;
+    left: 40px;
+    display: none;
+}
+
+#draw{
+    position: absolute;
+    margin-top: 30px;
+    font-size: 50px;
+    left: 160px;
+    display: none;
+
+}
