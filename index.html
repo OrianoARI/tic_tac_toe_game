@@ -12,27 +12,36 @@
 <body>
     <h1>Le jeu du Morpion</h1>
     <div id="game">
-    <div id="grid">
-        <div class="row">
-            <div class="cellOne" onclick="play(this)"></div>
-            <div class="cellOne" onclick="play(this)"></div>
-            <div class="cellOne" onclick="play(this)"></div>
+        <div id="grid">
+            <div class="row">
+                <div class="cellOne cell" onclick="play(this)"></div>
+                <div class="cellOne cell" onclick="play(this)"></div>
+                <div class="cellOne cell" onclick="play(this)"></div>
+            </div>
+            <div class="row">
+                <div class="cellTwo cell" onclick="play(this)"></div>
+                <div class="cellTwo cell" onclick="play(this)"></div>
+                <div class="cellTwo cell" onclick="play(this)"></div>
+            </div>
+            <div class="row">
+                <div class="cellThree cell" onclick="play(this)"></div>
+                <div class="cellThree cell" onclick="play(this)"></div>
+                <div class="cellThree cell" onclick="play(this)"></div>
+            </div>
         </div>
-        <div class="row">
-            <div class="cellTwo" onclick="play(this)"></div>
-            <div class="cellTwo" onclick="play(this)"></div>
-            <div class="cellTwo" onclick="play(this)"></div>
-        </div>
-        <div class="row">
-            <div class="cellThree" onclick="play(this)"></div>
-            <div class="cellThree" onclick="play(this)"></div>
-            <div class="cellThree" onclick="play(this)"></div>
+        <div id="score">
+            <h2>Tableau de bord</h2>
+            <div id="activePlayer">
+                <p>Légionnaire Impérial</p>
+                <p>Guerrier Sombrage</p>
+            </div>
+            <div class="win">
+                <p id="impWin">Le Légionnaire Impérial gagne!</p>
+                <p id="sombWin">Le Guerrier Sombrage gagne!</p>
+            </div>
+            <button onclick="reset()">Rejouer</button>
         </div>
     </div>
-    <div id="score">
-        <h2>Tableau de bord</h2>
-    </div>
-</div>
     <script src="assets/js/main.js"></script>
 </body>
 
