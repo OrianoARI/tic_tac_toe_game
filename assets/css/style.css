@@ -13,12 +13,12 @@
     src: url(../fonts/Faithcollapsing.ttf);
 }
 
-
 body {
     background-image: url(../img/main_background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 
 h1 {
     font-family: nordic;
@@ -29,13 +29,15 @@ h1 {
     margin: 40px;
 }
 
-#game{
+#game {
     display: flex;
-    padding-top: 100px;
+    align-items: center;
+
 }
 
 #grid {
-    margin-left: 100px;
+    margin-left: 300px;
+    border-radius: 20px;
     width: 432px;
     height: 432px;
     background-image: url(../img/grid-background.png);
@@ -45,10 +47,12 @@ h1 {
     align-items: center;
 }
 
-#score{
+#score {
     display: flex;
     flex-direction: column;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.71);
     margin-left: 400px;
+    margin-bottom: 100px;
     padding: 20px 50px 20px 50px;
     background-image: url(../img/background_board.jpg);
     text-align: center;
@@ -58,19 +62,16 @@ h1 {
     border-radius: 10px;
 }
 
-h2{
+h2 {
     margin-top: 10px;
     margin-bottom: 20px;
     color: rgb(198, 157, 103);
     text-shadow: 5px 5px 5px black;
 }
 
-#activePlayer{
-    display: flex;
-    justify-content: space-between;
-}
 
-#activePlayer p{
+
+#activePlayer p {
     margin: 10px;
 }
 
@@ -84,7 +85,6 @@ h2{
 .cellOne,
 .cellTwo,
 .cellThree {
-    border: 2px solid black;
     padding: 20px;
     height: 100px;
     width: 100px;
@@ -93,20 +93,20 @@ h2{
     font-size: 150px;
     font-family: old;
     line-height: 80px;
-    color:  rgb(60, 118, 92);
+    color: rgb(60, 118, 92);
 }
 
-.win{
+.win {
     height: 200px;
     position: relative;
 
 }
 
 
-.button{
+.button {
     padding: 10px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-family: nordic;
     color: beige;
     font-size: 30px;
@@ -114,27 +114,43 @@ h2{
     background-color: rgb(112, 63, 0);
 }
 
-#impWin{
+.button:hover {
+    font-weight: bold;
+}
+
+.button:active {
+    box-shadow: 3px 3px 3px black;
+    padding: 9px;
+}
+
+#solo{
+    font-weight: bold;
+}
+
+#multi{
+    font-weight: normal;
+}
+
+
+#impWin {
     position: absolute;
-    margin-top: 30px;
     font-size: 50px;
-    left: 20px;
+    font-weight: bold;
     display: none;
 }
 
-#sombWin{
+#sombWin {
     position: absolute;
-    margin-top: 30px;
+    margin: 0;
     font-size: 50px;
-    left: 40px;
+    font-weight: bold;
     display: none;
 }
 
-#draw{
+#draw {
     position: absolute;
-    margin-top: 30px;
+    left: 50px;
     font-size: 50px;
-    left: 160px;
+    font-weight: bold;
     display: none;
-
 }
