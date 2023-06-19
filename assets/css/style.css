@@ -13,10 +13,21 @@
     src: url(../fonts/Faithcollapsing.ttf);
 }
 
+html {
+   background-image: url(../img/background_board.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgb(148, 189, 172);
+    padding:0;
+    margin: 0;
+}
+
 body {
     background-image: url(../img/main_background.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -93,7 +104,7 @@ h2 {
     font-size: 150px;
     font-family: old;
     line-height: 80px;
-    color: rgb(60, 118, 92);
+    color: rgb(135, 25, 8);
 }
 
 .win {
@@ -123,18 +134,28 @@ h2 {
     padding: 9px;
 }
 
-#solo{
+#solo {
     font-weight: bold;
 }
 
-#multi{
+#multi {
     font-weight: normal;
 }
 
+#imp {
+    color: rgb(190, 33, 8);
+    font-weight: bold;
+}
+
+#somb {
+    font-weight: bold;
+    color: white;
+}
 
 #impWin {
     position: absolute;
-    font-size: 50px;
+    bottom: 0px;
+    font-size: 45px;
     font-weight: bold;
     display: none;
 }
@@ -153,4 +174,13 @@ h2 {
     font-size: 50px;
     font-weight: bold;
     display: none;
+}
+
+@media (max-width: 450px) {
+    #grid {
+
+        width: 332px;
+        height: 332px;
+
+    }
 }

@@ -31,8 +31,6 @@ function onePlayer() {
     multi = false;
     soloBtn.style.fontWeight = "bold";
     multiBtn.style.fontWeight = "normal";
-    console.log(solo);
-    console.log(multi);
 }
 
 function multiPlayer() {
@@ -40,49 +38,54 @@ function multiPlayer() {
     multi = true;
     soloBtn.style.fontWeight = "normal";
     multiBtn.style.fontWeight = "bold";
-    turn = 0
-    console.log(solo);
-    console.log(multi);
+    turn = 0;
 }
 
 function checkWin() {
+    console.log(gameTable);
     for (let i = 0; i < gameTable.length; i++) {
         if (gameTable[i][0] != "" && gameTable[i][0] == gameTable[i][1] && (gameTable[i][1]) && gameTable[i][1] != "" && (gameTable[i][1] == gameTable[i][2])) {
-            if (player == 1) {
-                impWin.style.display = "block";
-            } else {
+            if (gameTable[i][0] != "X") {
                 sombWin.style.display = "block";
+            } else {
+                impWin.style.display = "block";
             }
             gameOver = true;
+            return
         }
         if (gameTable[0][i] != "" && gameTable[0][i] == gameTable[1][i] && gameTable[2][i] && gameTable[1][i] != "" && (gameTable[1][i] == gameTable[2][i])) {
-            if (player == 1) {
-                impWin.style.display = "block";
-            } else {
+            if (gameTable[0][i] != "X") {
                 sombWin.style.display = "block";
+            } else {
+                impWin.style.display = "block";
             }
             gameOver = true;
+            return
         }
         if (gameTable[0][0] != "" && gameTable[0][0] == gameTable[1][1] && gameTable[1][1] && gameTable[1][1] != "" && (gameTable[1][1] == gameTable[2][2])) {
-            if (player == 1) {
-                impWin.style.display = "block";
-            } else {
+            if (gameTable[0][0] != "X") {
                 sombWin.style.display = "block";
+            } else {
+                impWin.style.display = "block";
             }
             gameOver = true;
+            return
         }
         if (gameTable[0][2] != "" && gameTable[0][2] == gameTable[1][1] && gameTable[1][1] && gameTable[1][1] != "" && (gameTable[1][1] == gameTable[2][0])) {
-            if (player == 1) {
-                impWin.style.display = "block";
-            } else {
+            if (gameTable[0][2] != "X") {
                 sombWin.style.display = "block";
+            } else {
+                impWin.style.display = "block";
             }
             gameOver = true;
+            return
         } else {
-            if (turn > 8) {
+            if (turn >= 9 && !gameOver) {
                 draw.style.display = "block";
                 console.log("draw");
                 gameOver = true
+                console.log(gameOver);
+                return
             }
         }
     }
@@ -92,32 +95,33 @@ function play(elem) {
     if (elem.innerHTML != "X" && elem.innerHTML != "O" && gameOver == false) {
         if (player % 2 == 0) {
             console.log(player);
-            somb.style.fontWeight = "bold";
-            imp.style.fontWeight = "normal";
+            somb.style.color = "rgb(190, 33, 8)";
+            imp.style.color = "white";
             elem.innerHTML = "X";
             turn++
             player++
             console.log(turn);
             updateGrid();
             checkWin();
-            if (turn >= 8) {
+            if (turn >= 9) {
                 gameOver = true;
             }
-            if (solo == true && multi == false) {
-                setTimeout(cpuPlay, 600);
+            if (solo == true && multi == false && gameOver == false) {
+
+                setTimeout(cpuPlay, 1000);
             }
         }
-       else if (!gameOver && player % 2 != 0) {
+        else if (!gameOver && player % 2 != 0) {
             console.log(gameOver);
-            imp.style.fontWeight = "bold";
-            somb.style.fontWeight = "normal";
-           
+            imp.style.color = "rgb(190, 33, 8)";
+            somb.style.color = "white";
+
             if (solo == false && multi == true) {
                 elem.innerHTML = "O";
-                updateGrid();
-                checkWin();
                 setTimeout(player++, 200);
                 setTimeout(turn++, 200);
+                updateGrid();
+                checkWin();
                 console.log(turn);
             }
             if (turn >= 9) {
@@ -134,18 +138,20 @@ if (gameOver == true) {
 
 function cpuPlay() {
     let cpuCell = random(0, 8)
+    imp.style.color = "rgb(190, 33, 8)";
+    somb.style.color = "white";
     while (document.querySelectorAll('.cell')[cpuCell].innerHTML != "") {
         cpuCell = random(0, 8)
     }
     document.querySelectorAll(".cell")[cpuCell].innerHTML = "O"
     updateGrid();
-    checkWin();
-    player++;
+    checkWin()
     turn++;
     console.log(turn);
     if (turn >= 9) {
         gameOver = true;
     }
+    player++
 }
 
 
@@ -180,6 +186,4 @@ function updateGrid() {
     }
 }
 
-imp.style.fontWeight = "bold";
-somb.style.fontWeight = "normal";
 

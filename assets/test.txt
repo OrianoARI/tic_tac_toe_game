@@ -1,1 +1,0 @@
-&& gameTable[i][0] != "" && gameTable[i][1] != "" && gameTable[0][i] != "" && gameTable[1][i] != "" && gameTable[0][0] != "" && gameTable[1][1] != "" && gameTable[0][2] != ""
